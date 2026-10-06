@@ -40,3 +40,8 @@ ul li a:hover {
   height: auto;
   flex-shrink: 0;          /* Prevents the image from squeezing smaller than 250px */
 }
+
+.text-block {
+  flex: 1;        /* 1. Forces the text to take up all remaining space on the right */
+  margin: 0;       /* 2. Removes any default outer spacing */
+}
