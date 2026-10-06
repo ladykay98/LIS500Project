@@ -4,7 +4,7 @@ body{
 }
 
 /* Sizing the image header to stretch across the website -- MB */
-site-header{
+image-header{
             width: 800px;
             height: auto;
             flex-shrink:0;
