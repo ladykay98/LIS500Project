@@ -24,14 +24,18 @@ ul li a:hover {
  
 .content-container {
   display: flex;
-  align-items: flex-start; /* Aligns items to the top */
-  gap: 20px;               /* Handles spacing between image and text automatically */
+  align-items: flex-start; /* Aligns items to the top -- MB */
+  gap: 20px;               /* Handles spacing between image and text automatically -- MB */
 }
 
 .content-container img {
   width: 250px;
   height: auto;
-  flex-shrink: 0;          /* Prevents the image from squeezing smaller than 250px */
+  flex-shrink: 0;          /* Prevents the image from squeezing smaller than 250px -- MB */
+}
+
+.text-block h3 {
+  margin-top: 0;   /*  Aligns the "Bio:" header lines up perfectly with the top of the photo -- MB */
 }
 
 .text-block {
