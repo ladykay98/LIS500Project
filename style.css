@@ -3,12 +3,7 @@ body{
       color: purple;
 }
 
-/* Sizing the image header to stretch across the website -- MB */
-image-header{
-            width: 800px;
-            height: auto;
-            flex-shrink:0;
-}     
+
 /* Only style links inside  <nav> header -kh*/
 nav li a {
   display: block;
