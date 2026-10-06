@@ -2,6 +2,13 @@ body{
       font-family: Arial, sans-serif;
       color: purple;
 }
+
+/* Sizing the image header to stretch across the website -- MB */
+header-image{
+            width: 800px;
+            height: auto;
+            flex-shrink:0;
+}     
 /* Only style links inside  <nav> header -kh*/
 nav li a {
   display: block;
