@@ -2,17 +2,7 @@ body{
       font-family: Arial, sans-serif;
       color: purple;
 }
-/* --- NAVIGATION STYLES ONLY --- */
-/* Target navigation list items using nav ul-kh */
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  display: flex; /* Makes nav links sit side-by-side */
-}
-
-/* Style ONLY the links inside <nav> -kh*/
+/* Only style links inside  <nav> header -kh*/
 nav li a {
   display: block;
   color: black;
@@ -22,7 +12,16 @@ nav li a {
 
 nav li a:hover {
   background-color: #111111;
-  color: white; /* Added white text on hover so it stays readable on dark background */
+  color: white;
+}
+
+/* Make navigation links line up horizontally-kh */
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  display: flex;
 }
 
 /* --- MAIN CONTENT LISTS (Resources / Articles) --- kh*/
