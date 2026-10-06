@@ -21,6 +21,14 @@ ul li a:hover {
   background-color: #111111;
 }
 
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  display: flex;
+}
+ 
 .content-container {
   display: flex;
   align-items: flex-start; /* Aligns items to the top */
