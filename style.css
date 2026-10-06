@@ -20,3 +20,15 @@ ul li a {
 ul li a:hover {
   background-color: #111111;
 }
+
+.content-container {
+  display: flex;
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 20px;               /* Handles spacing between image and text automatically */
+}
+
+.content-container img {
+  width: 250px;
+  height: auto;
+  flex-shrink: 0;          /* Prevents the image from squeezing smaller than 250px */
+}
