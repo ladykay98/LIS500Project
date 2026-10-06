@@ -2,24 +2,44 @@ body{
       font-family: Arial, sans-serif;
       color: purple;
 }
+/* --- NAVIGATION STYLES ONLY --- */
+/* Target navigation list items using nav ul-kh */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  display: flex; /* Makes nav links sit side-by-side */
+}
 
-ul li a {
+/* Style ONLY the links inside <nav> -kh*/
+nav li a {
   display: block;
   color: black;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-ul li a:hover {
+nav li a:hover {
   background-color: #111111;
+  color: white; /* Added white text on hover so it stays readable on dark background */
 }
 
-.nav-links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  display: flex;
+/* --- MAIN CONTENT LISTS (Resources / Articles) --- kh*/
+main ul, 
+section ul {
+  list-style-type: disc;
+  display: block;
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+main li a, 
+section li a {
+  display: inline;      /* Lets links sit naturally inside text paragraphs/lists */
+  padding: 0;           /* Removes button padding */
+  color: #0066cc;       /* Standard link blue (or choose your preferred color) */
+  text-decoration: underline;
 }
  
 .content-container {
