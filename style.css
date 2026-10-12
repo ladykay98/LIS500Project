@@ -1,6 +1,7 @@
 body{
-      font-family: Arial, sans-serif;
-      color: purple;
+      font-family: Garamond, serif;
+      color: black;
+      background-color: #F2EDF5; /* A soft, light purple background to represent our Northwestern roots - go cats!-kh */
 }
 
 
@@ -8,8 +9,9 @@ body{
 nav li a {
   display: block;
   color: black;
-  padding: 14px 16px;
+  padding: 10px 18px;          /* Adds space inside the button around the text-kh */
   text-decoration: none;
+  border-radius: 6px;          /* Rounds the corners of the buttons for visual appeal - kh */
 }
 
 nav li a:hover {
