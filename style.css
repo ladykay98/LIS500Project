@@ -3,10 +3,15 @@ header {
 }
 
 body{
-      font-family: Garamond, serif;
-      color: black;
-      background-color: #F2EDF5; /* A soft, light purple background to represent our Northwestern roots - go cats!-kh */
-      padding: 0 2rem; /* Added padding to the left and right edges of the entire window-kh */
+  font-family: Garamond, serif;
+  color: black;
+  background-color: #F2EDF5; /* A soft, light purple background to represent our Northwestern roots - go cats!-kh */
+  
+  /* Font size & spacing adjustments */
+  font-size: 1.25rem; /* gives font a comfortable default reading size */
+  line-height: 1.6;   /* Adds breathing room between lines of text */
+      
+  padding: 0 2rem; /* Added padding to the left and right edges of the entire window-kh */
 }
 
 
