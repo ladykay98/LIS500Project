@@ -2,6 +2,7 @@ body{
       font-family: Garamond, serif;
       color: black;
       background-color: #F2EDF5; /* A soft, light purple background to represent our Northwestern roots - go cats!-kh */
+      padding: 0 2rem; /* Added padding to the left and right edges of the entire window-kh */
 }
 
 
