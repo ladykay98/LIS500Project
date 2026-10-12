@@ -52,7 +52,7 @@ nav li a:hover {
   margin: 0;
   padding: 0;
   background-color: transparent;
-  gap: 2rem;
+  gap: 1rem;
   display: flex;
 }
 
