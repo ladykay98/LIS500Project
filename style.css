@@ -13,7 +13,23 @@ body{
       
   padding: 0 2rem; /* Added padding to the left and right edges of the entire window-kh */
 }
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
 
+h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
 
 /* Only style links inside  <nav> header -kh*/
 nav li a {
