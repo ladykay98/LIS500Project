@@ -85,8 +85,22 @@ section li a {
   flex-shrink: 0;          /* Prevents the image from squeezing smaller than 250px -- MB */
 }
 
-.text-block h3 {
-  margin-top: 0;   /*  Aligns the "Bio:" header lines up perfectly with the top of the photo -- MB */
+/* Text wraps around the photo of Alex Tizon -- MB */
+.float-left {
+  float: left;
+  width: 220px;
+  height: auto;
+  margin: 0 1.25rem 0.75rem 0;   /* top, right, bottom, left: space between photo and text -- MB */
+}
+
+/* Keeps the next section from wrapping around the photo too -- MB */
+.wrap-section {
+  display: flow-root;
+  margin-bottom: 2.5rem;
+}
+
+.wrap-section p:first-of-type {
+  margin-top: 0;                 /* first line aligns with top of photo */
 }
 
 .text-block {
