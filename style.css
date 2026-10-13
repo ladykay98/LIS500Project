@@ -148,9 +148,9 @@ section li a {
 /* --- RESOURCES PAGE CONTAINER CARDS --- kh */
 .card {
   background-color: #ffffff; /* Clean white card background */
-  border: 1px solid #e2e8f0;   /* Light gray border for structure */
+  border: 1px solid #e2e8f0;   /* Light gray border for style */
   border-radius: 12px;       /* Soft rounded corners */
-  padding: 24px;             /* Space between the border and internal content */
+  padding: 24px;             /* Space between the border and content */
   margin-bottom: 24px;       /* Separation between stacked cards */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Subtle depth shadow */
 }
