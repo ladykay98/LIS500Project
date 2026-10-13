@@ -56,7 +56,7 @@ nav li a:hover {
   display: flex;
 }
 
-<!-- --- MAIN CONTENT LISTS (Resources / Articles) kh -->
+<!-- MAIN CONTENT LISTS (Resources / Articles) kh -->
 main ul, 
 section ul {
   list-style-type: disc;
@@ -76,31 +76,31 @@ section li a {
 .content-container {
   display: flex;
   align-items: flex-start; <!-- Aligns items to the top MB-->
-  gap: 20px;               <!-- Handles spacing between image and text automatically MB-->
+  gap: 20px;               <!-- Handles spacing between image and text automatically MB -->
 }
 
 .content-container img {
   width: 250px;
   height: auto;
-  flex-shrink: 0;          <!-- Prevents the image from squeezing smaller than 250px  MB-->
+  flex-shrink: 0;          <!-- Prevents the image from squeezing smaller than 250px  MB -->
 }
 
-<!--Text wraps around the photo of Alex Tizon MB-->
+<!--Text wraps around the photo of Alex Tizon MB -->
 .float-left {
   float: left;
   width: 220px;
   height: auto;
-  margin: 0 1.25rem 0.75rem 0;   <!-- space between photo and text MB-->
+  margin: 0 1.25rem 0.75rem 0;   <!-- space between photo and text MB -->
 }
 
-<!--Keeps the next section from wrapping around the photo too MB-->
+<!--Keeps the next section from wrapping around the photo too MB -->
 .wrap-section {
   display: flow-root;
   margin-bottom: 2.5rem;
 }
 
 .wrap-section p:first-of-type {
-  margin-top: 0;                 <!-- aligning the first line with top of photo MB-->
+  margin-top: 0;                 <!-- aligning the first line with top of photo MB -->
 }
 
 .text-block {
@@ -108,7 +108,7 @@ section li a {
   margin: 0;       
 }
 
-<!-- QUICK NAV SECTION MB-->
+<!-- QUICK NAV SECTION MB -->
 .quick-nav {
   margin: 3rem 0 2rem;          
   padding-top: 2rem;
@@ -116,7 +116,7 @@ section li a {
 }
 
 .quick-nav h3 {
-  margin: 0 0 1rem;             <!-- creating a gap between the heading and the cards MB-->
+  margin: 0 0 1rem;             <!-- creating a gap between the heading and the cards MB -->
 }
 
 .card-grid {
@@ -126,11 +126,11 @@ section li a {
 }
 
 .nav-card {
-  display: block;               <!-- makes the whole card clickable as a box MB-->
+  display: block;               <!-- makes the whole card clickable as a box MB -->
   padding: 1.25rem;
   border: 1px solid #e3d9ea;
   border-radius: 10px;
-  text-decoration: none;     <!-- taking out the default underline from the links MB-->   
+  text-decoration: none;     <!-- taking out the default underline from the links MB -->   
   color: inherit;
 }
 
@@ -139,18 +139,18 @@ section li a {
 }
 
 .nav-card h4 {
-  margin: 0 0 0.35rem;          <!-- no space above, small space below MB-->
+  margin: 0 0 0.35rem;          <!-- no space above, small space below MB -->
 }
 
 .nav-card p {
-  margin: 0;                    <!-- removes default paragraph spacing MB-->
+  margin: 0;                    <!-- removes default paragraph spacing MB -->
 }
-<!-- RESOURCES PAGE CONTAINER CARDS  kh-->
+<!-- RESOURCES PAGE CONTAINER CARDS  kh -->
 .card {
-  background-color: #ffffff; <!--Clean white card background kh-->
-  border: 1px solid #e2e8f0;  <!-- Light gray border for style kh-->
-  border-radius: 12px;       <!-- Soft rounded corners kh-->
-  padding: 24px;             <!-- Space between the border and content kh-->
-  margin-bottom: 24px;       <!-- Separation between stacked cards kh-->
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); <!-- Subtle depth shadow kh-->
+  background-color: #ffffff; <!--Clean white card background kh -->
+  border: 1px solid #e2e8f0;  <!-- Light gray border for style kh -->
+  border-radius: 12px;       <!-- Soft rounded corners kh -->
+  padding: 24px;             <!-- Space between the border and content kh -->
+  margin-bottom: 24px;       <!-- Separation between stacked cards kh -->
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); <!-- Subtle depth shadow kh -->
 }
