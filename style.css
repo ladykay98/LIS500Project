@@ -31,7 +31,7 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
-<!-- Only style links inside  <nav> header -kh -->
+/* Only style links inside  <nav> header -kh */
 nav li a {
   display: block;
   color: black;
