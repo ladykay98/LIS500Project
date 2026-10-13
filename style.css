@@ -8,8 +8,8 @@ body{
   background-color: #F2EDF5;  <!-- A soft, light purple background to represent our Northwestern roots - go cats!-kh -->
   
   <!-- Font size & spacing adjustments kh-->
-  font-size: 1.25rem; <!-- gives font a comfortable default reading size kh-->
-  line-height: 1.6;   <!-- adds breathing room between lines of text kh-->
+  font-size: 1.25rem; <!-- gives font a comfortable default reading size kh -->
+  line-height: 1.6;   <!-- adds breathing room between lines of text kh -->
       
   padding: 0 2rem; <!-- Added padding to the left and right edges of the entire window-kh -->
 }
@@ -31,7 +31,7 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
-<!-- Only style links inside  <nav> header -kh-->
+<!-- Only style links inside  <nav> header -kh -->
 nav li a {
   display: block;
   color: black;
