@@ -107,7 +107,18 @@ section li a {
   flex: 1;        /* 1. Forces the text to take up all remaining space on the right */
   margin: 0;       /* 2. Removes any default outer spacing */
 }
-/* --- QUICK NAV CARDS --- MB */
+
+/* --- QUICK NAV SECTION --- MB */
+.quick-nav {
+  margin: 3rem 0 2rem;          /* space above and below the whole block */
+  padding-top: 2rem;
+  border-top: 1px solid #e3d9ea; /* subtle divider from the content above */
+}
+
+.quick-nav h3 {
+  margin: 0 0 1rem;             /* no space above, 1rem gap before the cards */
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  /* cards side by side, wrap on phones */
