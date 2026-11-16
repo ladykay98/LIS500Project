@@ -30,18 +30,8 @@
   <p>Through the use of food photos, we wanted to explore the accuracy and imperfections of training an AI model.</p>
   <p>If our model has trouble distinguishing the difference between a Chicago-Style Hot Dog, a banana, and a burger with fixings, how can we expect it to fairly distinguish human beings?</p>
   <br>
-  <h2>Project Inspiration</h2>
-  <p><i>From Mike:</i> My recent studies of tech inspired me to start watching the show, <i>Silicon Valley</i>. (I know, I'm a little late to the game.)</p>
-  <p>This week, I watched the episode where Jian Yang pitches his new app "See-Food." A lightbulb clicked in my head and realized that we're doing something similar with this project.</p>
-  <p>So I decided to focus our machine-learning project around food.</p>
-  <p>For those not familiar with the episode, here is a clip from Jian's pitch:</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ACmydtFDTGs?si=tS75EXXOXC61nycv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-  <h2>Datasets</h2>
-  <p>We contributed over 100 photos we took and utilized the following classes: Chicago-Style hot dog, burger, salad, apple, banana, and "Not on the List."</p>
-  <p>"Not on the List" was established as a base case, because when we initially trained the system without a base case, when we looked at the webcam, it thought we were burgers.</p>
-  <p>So Mike took about 53 selfies to establish a base case called "Not on the List."</p>	
-  <h2>Live Classifier</h2>	
-<div>Teachable Machine Image Model</div>
+<h2>Teachable Machine Image Model</h2>
+<b>Click the button below to launch the model!</b>	
 <button type="button" onclick="init()">Launch Model</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -107,15 +97,17 @@
             </div>`;
     }
 }
-</script>
-	
-        
-  
- 
+</script>	
+  <h2>Project Inspiration</h2>
+  <p><i>From Mike:</i> My recent studies of tech inspired me to start watching the show, <i>Silicon Valley</i>. (I know, I'm a little late to the game.)</p>
+  <p>This week, I watched the episode where Jian Yang pitches his new app "See-Food." A lightbulb clicked in my head and realized that we're doing something similar with this project.</p>
+  <p>So I decided to focus our machine-learning project around food.</p>
+  <p>For those not familiar with the episode, here is a clip from Jian's pitch:</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ACmydtFDTGs?si=tS75EXXOXC61nycv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+  <h2>Datasets</h2>
+  <p>We contributed over 100 photos we took and utilized the following classes: Chicago-Style hot dog, burger, salad, apple, banana, and "Not on the List."</p>
+  <p>"Not on the List" was established as a base case, because when we initially trained the system without a base case, when we looked at the webcam, it thought we were burgers.</p>
+  <p>So Mike took about 53 selfies to establish a base case called "Not on the List."</p>		 
 </main>
-
-
-
-
 </body>
 </html>
