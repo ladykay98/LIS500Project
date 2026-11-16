@@ -99,15 +99,14 @@
 
     for (let i = 0; i < maxPredictions; i++) {
         const pct = (prediction[i].probability * 100).toFixed(1);
-        labelContainer.childNodes[i].innerHTML = `
+        labelContainer.childNodes[i].innerHTML = 
             <div class="label-row ${i === 0 ? 'top' : ''}">
                 <span class="name">${prediction[i].className}</span>
                 <span class="pct">${pct}%</span>
                 <div class="bar"><div class="fill" style="width:${pct}%"></div></div>
-            </div>`;
+            </div>;
     }
 }
-    }
 </script>
 	
         
