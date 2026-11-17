@@ -34,7 +34,7 @@
 </p>
 </p>For this project, we utilized the online free training model by Google called Teachable Machines. </p>
 
-<blockquote>“A fast, easy way to create machine learning models for your sites, apps, and more – no expertise or coding required.” Try it yourself.
+<blockquote><i>“A fast, easy way to create machine learning models for your sites, apps, and more – no expertise or coding required.”</i> <a href="https://teachablemachine.withgoogle.com/">Try it yourself.</a>
 </blockquote>
 <p></p>Having no prior experience with training an AI model (Kamaria) I found this site to be particularly user friendly. Aside from the hiccups mentioned below, I think this is a great online tool to introduce laypeople to the concept of datasets and model training. It’s just enough challenge to make you feel accomplished while not adding so much of the layered nuance and ‘tech’ that you feel overwhelmed. I could see this being very useful in the classroom setting.
 </p>
@@ -109,25 +109,68 @@
     }
 }
 </script>	
+	<h2>Give The Model A Try!</h2>
+<ol>
+  <li><b>Initialize the Video Feed:</b> Select the <b>Start Model</b> button to activate your connected webcam.</li>
+  <li><b>Authorize Camera Access:</b> Accept the browser prompt to share your video stream if permission hasn't been established yet.</li>
+  <li><b>Test the Recognition:</b> Move in front of the camera and cycle through various foods and  poses.</li>
+  <li><b>Observe Live Output:</b> Track the model's classifications and real-confidence meters updating dynamically on screen.</li> 
+</ol>
+
+<p><i>Note: Because this is an experimental machine learning model, performance can vary depending on external variables such as room lighting, background distractions, camera angles, and the diversity of images within the training dataset.</i></p>
+
+
   <h2>Project Inspiration</h2>
-  <p><i>From Mike:</i> My recent studies of tech inspired me to start watching the show, <i>Silicon Valley</i>. (I know, I'm a little late to the game.)</p>
-  <p>This week, I watched the episode where Jian Yang pitches his new app "See-Food." A lightbulb clicked in my head and realized that we're doing something similar with this project.</p>
-  <p>So I decided to focus our machine-learning project around food.</p>
-  <p>For those not familiar with the episode, here is a clip from Jian's pitch:</p>
+  <p>My recent studies (Mike) of tech inspired me to start watching the show, Silicon Valley. (I know, I'm a little late to the game.)</p>
+
+<p>This week, I watched the episode where Jian Yang pitches his new app "See-Food." A lightbulb clicked in my head and realized that we're doing something similar with this project.</p>
+
+<p>So I decided to focus our machine-learning project around food.</p>
+
+<p>Mike shared his lightbulb moment with me as we contemplated the theme of our project and I was quickly on board. However, the idea of classifying food imagery was appealing to me for different reasons. Being on a health and fitness journey, my mind immediately went to practical applications. If the teachable machine could accurately identify food, that could potentially solve a major problem with regard to weight loss efforts (with further development of course).</p>
+
+<p>The tedious burden of tracking and logging food for calorie counting is one that plagues many a dieter. If one could simply snap a picture and have an app that identified the food, the portion size and log its associated calories, that would relieve much of the burden of calorie counting and people would be more likely to 1) do it and 2) stay consistent with it. While there are currently apps that will allow you to pull some of that information from label barcodes on packaging, I have yet to come across one that will do the same with a picture of your dinner plate. So the theme we chose was appealing to me for those reasons.</p>
+
+<p>And so we eagerly assembled our respective data sets. Mike gathered a collection of signature Chicago-style foods. And I chose the categories of fruits and vegetables.</p>
+
+<p>For those not familiar with the Silicon Valley series, here is a clip from Jian's pitch where he introduces his app idea:</p>
+
   <iframe width="560" height="315" src="https://www.youtube.com/embed/ACmydtFDTGs?si=tS75EXXOXC61nycv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-  <h2>Datasets</h2>
+  <h2>Dataset Summary:</h2>
+<ul>
+  <li>4 classes: Signature dishes, Fruits, Vegetables & Not Listed</li>
+  <li>100+ original images contributed by each group member</li>
+  <li>Images grouped by class (in GitHub)</li>
+  <li>Variation in angle, lighting and perspective</li>
+</ul>
+
+	<h2>Datasets</h2>
   <b>Before we explain the datasets, there may be some people that are wondering, "What is a Chicago-Style Hot Dog?"</b>
   <p>A Chicago-Style Hot Dog is a beef hot dog in a bun topped with mustard, pickle, tomatoes, relish, onions, sport pepper.</p>
   <p>Fun fact: ketchup isn't put on a Chicago-style hot dog because it masks the flavor of the quality of the beef. It's like putting steak sauce on a dry-aged prime ribeye steak.</p>
   <a href="https://www.wttw.com/chicago-stories/iconic-foods/what-is-a-chicago-style-hot-dog">Click here to learn more about the Chicago-Style Hot Dog</a> 	
-  <p>We contributed over 100 photos we took and utilized the following classes: Chicago-Style hot dog, burger, salad, apple, banana, and "Not on the List."</p>
-  <p>"Not on the List" was established as a base case, because when we initially trained the system without a base case, when we looked at the webcam, it thought we were burgers.</p>
-  <p>So Mike took about 53 selfies to establish a base case called "Not on the List."</p>
+  <p>We contributed over 200+ photos that we took and utilized the following classes: Chicago-Style hot dog, burger, salad, apple, banana, onion, avocado and "Not on the List."</p>
+
+<p>"Not on the List" was established as a base case, because initially trained without the base case, when we looked at the webcam, it thought we were burgers. This immediately resonated with me (Kamaria) because of Dr. Buolamwini’s experience with the coded gaze, as she references in her book “Unmasking AI”. The coded gaze is Dr. Buolamwini’s descriptive term for the flaws she observed in facial recognition technology. </p>
+
+<p>When conducting her experiments, she observed that the technology couldn’t recognize the face of her darker toned skin. But it was able to identify her fairer skinned roommate or when she donned a white mask. At first I thought ‘wow, we haven’t come much farther in improving facial recognition technology’ since Dr. Buolamwini’s book was published three years ago and her research years prior to that. But when Mike got the same results as myself, I withheld judgement just a little longer (smile).</p>
+
   <p><b>Mike, why did you choose burgers, Chicago-style hot dogs, and salads?</b></p>
   <p>It was happenstance, honestly. On Veteran's Day, many Chicago restaurants give free meals to those who serve or currently serving. It's the only time I ask for the veteran discount at a business.</p>
   <p>Two of my favorite restaurants participate in this deal and they happen to serve burgers with elaborate fixings and Chicago-Style hot dogs.</p>
   <p>But I guess as a challenge to the model, I wanted to see if burgers and hot dogs with elaborate toppings would be mistaken for a salad.</p>
-  <p>I also included a McDonald's Quarter Pounder with Cheese in the burger dataset.</p>	
+  <p>I also included a McDonald's Quarter Pounder with Cheese in the burger dataset.</p>
+	<h2>Observations and Conclusions:</h2>
+<p>The model is very fickle in what kind of data it receives. I found that the only images it would take were small jpegs. It could not turn movies into still shots as shown in the reference video. So I am assuming that can only be achieved via the model’s webcam. We found that we needed to try multiple times to get it to accept our images. And although it prompts you to bulk upload, in reality you can only upload a few at a time, not nearly anything resembling what one would consider bulk.</p>
+
+<p>Also, it was not consistent in identification either. I (Kamaria) initially took pictures of my items on a green background similar to the reference video from Code Train. And the model identified the fruits and legumes (I chose those two categories in the first round of images) correctly in my model. However, when merged with Mike’s images in a combined training model, the accuracy tanked. That is why you will see so many images in our GitHub repository. The first iteration was against a green background and the second iteration was against a white background.</p>
+
+<p>At the end of the day, our fun little experiment with classifying hot dogs, fruits, and burgers is a pretty eye-opening reminder of how easily bias sneaks into automated tech. When our model initially mistook our faces for burgers just because it didn't have a baseline to compare us to, it drove home the exact point Dr. Buolamwini makes in Unmasking AI: algorithms only know what they are taught to see, and they miscategorize whatever gets left out of the dataset. </p>
+
+<p>Adding a "Not on the List" category with Mike's selfies fixed the glitch for our project, sure, but it highlights a much bigger issue. If a simple classroom model can reduce human faces to a fast-food item just because of a limited training set, the stakes get way higher when those same blind spots show up in facial recognition, hiring tools, surveillance tools or law enforcement. Experimenting with these quirks on a small scale really shows why inclusive data and human accountability aren't optional before we trust AI to fairly see people, especially given the harmful impacts and consequences they have the potential to impose.</p>
+
+<p>Feel free to explore our code, sample photos, and the our model here:</p>
+
 </main>
 </body>
 </html>
