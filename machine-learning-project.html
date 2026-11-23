@@ -25,7 +25,7 @@
 
   <main>
 
-    <!-- Hero -->
+    <!-- Hero MB -->
     <section class="hero">
       <h1>See-Food: Machine Learning Project</h1>
       <p>
@@ -34,7 +34,7 @@
       </p>
     </section>
 
-    <!-- Quick overview + instructions, side by side -->
+    <!-- Quick overview + instructions, side by side MB -->
     <section class="two-col">
       <article class="card">
         <h2>Project Overview</h2>
@@ -67,12 +67,11 @@
       </article>
     </section>
 
-    <!-- Live model -->
+    <!-- Live model MB -->
     <section class="card">
       <h2>Live Classifier</h2>
       <p>Click below to test the model with your webcam. Your browser may ask for camera access.</p>
 
-      <!-- I'm not an expert in how to create portrait mode using code, so I used Claude to help create the code -- MB -->
       <button type="button" class="tm-button" onclick="init()">Launch See-Food</button>
 
       <div class="tm-layout">
@@ -87,7 +86,7 @@
       </div>
     </section>
 
-    <!-- Demo video -->
+    <!-- Demo video MB -->
     <section class="card">
       <h2>Demo Video</h2>
       <p>Here's See-Food in action.</p>
@@ -96,7 +95,7 @@
       </div>
     </section>
 
-    <!-- Full project statement -->
+    <!-- Full project statement MB -->
     <section class="card">
       <h2>Project Statement</h2>
 
@@ -166,6 +165,12 @@
         repository has so many images: the first iteration was shot against a green background and the second against
         a white background.
       </p>
+      <p>
+        <i>Mike's observations:</i> Reflecting on this whole experience, maybe going with food was a bit too ambitious
+        in teaching a machine how to detect various food items. Including a large sample for each class may help in training
+        the model in doing a better job of distinguishing a banana from a Chicago-Style hot dog or a burger. While Kamaria's model
+        and my model my have functioned accurately when we separated our datasets, combining them provided a greater challenge to accuracy.
+      </p>
 
       <h3>Bias and the Coded Gaze</h3>
       <p>
@@ -179,6 +184,33 @@
         lighter-skinned roommate, or her when she put on a white mask. At first I thought, "Wow, we haven't come much
         farther in improving facial recognition," since her book came out three years ago and her research years
         before that. But when Mike got the same results as me, I withheld judgment just a little longer.
+      </p>
+      <p>
+        <i>Mike:</i>When Kamaria told me that her model for fruits and legumes was accurate before incorporating my data,
+        I thought to myself, "Is there something wrong with the data she supplied?" But then, I thought to look inward: through my 
+        own biases. Was the data I provided dominating hers for some unknown reason?
+      </p>
+      <p>
+        Was the algorithm doing a better job of detecting the Chicago-style hot dogs and burgers over her fruits because
+        social media rewards exquisite pictures of overdone meals?
+      </p>
+      <p>
+        Look at the food photos we see on Instagram and what busts through the algorithm. It isn't just a simple photo of an 
+        apple or a banana behind a plain background. The algorithm rewards the Michelin-star chef who tops a hot dog with 
+        exotic fixings and eye-appealing toppings with more views and vanity metrics.
+      </p>
+      <p>
+        Is Kamaria's photos of apples and bananas worth any less than the Chicago-style hot dog or the salad with multiple layers
+        of vegetables? Of course not. But as someone who has spent the past decade in social media marketing, the goal is to 
+        create engaging photos for the prize of a high score in vanity metrics. Because social media companies tune their algorithms
+        to reward the content that generates higher engagement, people will engage with a product that is more done up than something that
+        showcases simplicity.
+      </p>
+      <p>
+        To me, the bias doesn't just lay in the datasets that favor a certain race or look, but it's also in class as well. A 
+        photo of a Toyota Corolla on a street won't get as much engagement as a beautiful influencer living their best life on 
+        a Bali beach or a yacht off the coast of Dubai, but the simple photo may have a story that provides more substance than
+        the superficial one of the influencer.
       </p>
 
       <h3>Conclusion</h3>
@@ -195,9 +227,24 @@
         surveillance, or law enforcement. Inclusive data and human accountability aren't optional before we trust AI to
         fairly see people, especially given the harm these systems can cause.
       </p>
+      <p>
+        <i>Mike:</i>I also learned how important it is to gather quality data and how in some instances, using 50 photos may not
+        be enough in accurately training a data set. And if having a bigger data set could possibly help when it comes to identifying food,
+        imagine how it could be helpful in training AI models to properly identify faces. 
+      </p>
+      <p>
+        Many of us non-tech people think AI and algorithms is this magical process that produces results in an instant. This project
+        helped demystify machine learning and, at least for me, made it seem like it was more than just a talking point to either scare
+        us that AI is a doomsday machine and a world savior at the same time. Acutally trying to train a machine, in a way, made it feel less
+        scary or fall into a transhumanist cult that this tool is supposed to be the next glorified leader of humanity.
+      </p>
+      <p>
+        All it is...is a tool. And they can be either wielded for good or dangerously. But the more we learn, maybe the better society will be
+        at wielding this tool.
+      </p>
     </section>
 
-    <!-- Links -->
+    <!-- Links MB -->
     <section class="card">
       <h2>Project Resources</h2>
       <ul>
@@ -211,8 +258,8 @@
   <footer class="site-footer">
     <p>Code &amp; Power • Machine Learning Project</p>
   </footer>
-
-  <!-- Teachable Machine scripts -->
+  
+  <!-- I'm not an expert in how to create portrait mode using code, so I used Claude to help create the code -- MB -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
   <script>
