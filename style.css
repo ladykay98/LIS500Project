@@ -163,3 +163,94 @@ section li a {
 .label-row .fill { height: 100%; background: #9aa5b1; transition: width 0.15s; }
 .label-row.top { font-weight: bold; }
 .label-row.top .fill { background: #2e7d32; }
+
+/* Stylizing the Machine Learning Model Page MB */
+.ml-page main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+/* Hero */
+.ml-page .hero {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: #C9B1D8;
+  border-radius: 12px;
+}
+.ml-page .hero h1 { margin-top: 0; }
+.ml-page .hero p  { margin-bottom: 0; }
+
+/* Cards (same look as the existing .card on the Resources page) */
+.ml-page .card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.ml-page .card h2 { margin-top: 0; }
+
+/* Two cards side by side, stacked on small screens */
+.ml-page .two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.ml-page .two-col .card { margin-bottom: 0; }
+
+/* Small gray note text */
+.ml-page .muted {
+  color: #555;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Launch button, matching the nav buttons */
+.ml-page .tm-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background: #C9B1D8;
+  color: #000;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+.ml-page .tm-button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* Webcam + predictions side by side */
+.ml-page .tm-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.ml-page #webcam-container canvas {
+  border-radius: 10px;
+  display: block;
+}
+.ml-page #label-container { width: 300px; max-width: 100%; }
+
+/* Videos resize to fit the card */
+.ml-page .video iframe {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* Footer */
+.ml-page .site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+}
