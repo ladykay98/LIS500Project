@@ -42,73 +42,105 @@
 <h2>See-Food!: Teachable Machine Image Model</h2>
 <h3>Demo Video:</h3>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qPPDP5UgEEM?si=clVjGLMtfqb3NH4T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>	
-<br><b>Click the button below to launch the model!</b><br>	
+<br><b>Click the button below to launch the model!</b><br>
+//Since I'm not an expert in how to create portrait mode using code, I had to use Claude to hel pcreate the code -- MB	
 <button type="button" onclick="init()">Launch See-Food</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
-    // More API functions here:
-    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-
-    // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/XdJ9u4iiu/";
 
-    let model, webcam, labelContainer, maxPredictions;
+    const SIZE = 200;          // webcam width/height
+    const BLUR_PX = 8;         // background blur strength
+    const FOCUS_INNER = 0.25;  // fully sharp radius (fraction of SIZE)
+    const FOCUS_OUTER = 0.45;  // fade-to-blur radius (fraction of SIZE)
 
-    // Load the image model and setup the webcam
+    let model, webcam, labelContainer, maxPredictions;
+    let displayCanvas, displayCtx, sharpCanvas, sharpCtx;
+
     async function init() {
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
 
-        // Convenience function to setup a webcam
-        const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
+        const flip = true;
+        webcam = new tmImage.Webcam(SIZE, SIZE, flip);
+        await webcam.setup();
         await webcam.play();
-        window.requestAnimationFrame(loop);
 
-        // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        // Visible canvas (blurred composite)
+        displayCanvas = document.createElement("canvas");
+        displayCanvas.width = displayCanvas.height = SIZE;
+        displayCtx = displayCanvas.getContext("2d");
+
+        // Offscreen canvas for the sharp center
+        sharpCanvas = document.createElement("canvas");
+        sharpCanvas.width = sharpCanvas.height = SIZE;
+        sharpCtx = sharpCanvas.getContext("2d");
+
+        // Show the blurred canvas instead of the raw webcam canvas
+        document.getElementById("webcam-container").appendChild(displayCanvas);
+
         labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
+        for (let i = 0; i < maxPredictions; i++) {
             labelContainer.appendChild(document.createElement("div"));
         }
+
+        window.requestAnimationFrame(loop);
     }
 
     async function loop() {
-        webcam.update(); // update the webcam frame
+        webcam.update();
+        drawFocusBlur();
         await predict();
         window.requestAnimationFrame(loop);
     }
 
-    // run the webcam image through the image model
-    async function predict() {
-        // predict can take in an image, video or canvas html element
-            const prediction = await model.predict(webcam.canvas);
+    function drawFocusBlur() {
+        const src = webcam.canvas;
 
-    // Sort highest probability first
-    prediction.sort((a, b) => b.probability - a.probability);
+        // 1. Blurred background (drawn slightly oversized to avoid dark blur edges)
+        displayCtx.filter = `blur(${BLUR_PX}px)`;
+        displayCtx.drawImage(src, -BLUR_PX * 2, -BLUR_PX * 2, SIZE + BLUR_PX * 4, SIZE + BLUR_PX * 4);
+        displayCtx.filter = "none";
 
-    for (let i = 0; i < maxPredictions; i++) {
-        const pct = (prediction[i].probability * 100).toFixed(1);
-        labelContainer.childNodes[i].innerHTML = `
-            <div class="label-row ${i === 0 ? 'top' : ''}">
-                <span class="name">${prediction[i].className}</span>
-                <span class="pct">${pct}%</span>
-                <div class="bar"><div class="fill" style="width:${pct}%"></div></div>
-            </div>`;
+        // 2. Sharp copy, masked to a soft circle
+        sharpCtx.globalCompositeOperation = "source-over";
+        sharpCtx.clearRect(0, 0, SIZE, SIZE);
+        sharpCtx.drawImage(src, 0, 0, SIZE, SIZE);
+
+        sharpCtx.globalCompositeOperation = "destination-in";
+        const c = SIZE / 2;
+        const g = sharpCtx.createRadialGradient(c, c, SIZE * FOCUS_INNER, c, c, SIZE * FOCUS_OUTER);
+        g.addColorStop(0, "rgba(0,0,0,1)");
+        g.addColorStop(1, "rgba(0,0,0,0)");
+        sharpCtx.fillStyle = g;
+        sharpCtx.fillRect(0, 0, SIZE, SIZE);
+
+        // 3. Sharp center on top of blurred background
+        displayCtx.drawImage(sharpCanvas, 0, 0);
     }
-}
-</script>	
+
+    async function predict() {
+        // Predict on the raw, unblurred frame for accuracy
+        const prediction = await model.predict(webcam.canvas);
+        prediction.sort((a, b) => b.probability - a.probability);
+
+        for (let i = 0; i < maxPredictions; i++) {
+            const pct = (prediction[i].probability * 100).toFixed(1);
+            labelContainer.childNodes[i].innerHTML = `
+                <div class="label-row ${i === 0 ? 'top' : ''}">
+                    <span class="name">${prediction[i].className}</span>
+                    <span class="pct">${pct}%</span>
+                    <div class="bar"><div class="fill" style="width:${pct}%"></div></div>
+                </div>`;
+        }
+    }
+</script>
 	<h2>Give The Model A Try</h2>
 <ol>
   <li><b>Initialize the Video Feed:</b> Select the <b>Start Model</b> button to activate your connected webcam.</li>
